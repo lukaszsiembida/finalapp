@@ -1,5 +1,6 @@
 package pl.sda.equals_hashcode;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class ArrayListHashSet {
     }
 
     @Test
+    @Disabled
     void arrayListArrayList(){
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();

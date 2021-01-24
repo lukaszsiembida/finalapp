@@ -1,5 +1,6 @@
 package pl.sda.threads;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 
 public class BankExample {
     @Test
+    @Disabled
     void bankSequentially(){
         for (int i = 0; i < 100; i++) {
             new ClientAction().run();
@@ -15,6 +17,7 @@ public class BankExample {
     }
 
     @Test
+    @Disabled
     void bankWithThreads(){
         List<Thread> threads = new ArrayList<>();
         for (int i = 0; i < 100; i++) {

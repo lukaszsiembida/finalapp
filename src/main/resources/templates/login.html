@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Logowanie</title>
-    <div th:replace="/fragments/header :: header-css"></div>
+    <div th:replace="fragments/header :: header-css"></div>
 </head>
 <body>
-<div th:replace="/fragments/header :: headerFragment"></div>
+<div th:replace="fragments/header :: headerFragment"></div>
 <form method="post" th:action="@{/login-process}">
     <input name="username" type="email"><br/>
     <input name="password" type="password"><br/>

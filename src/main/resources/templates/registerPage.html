@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
-    <div th:replace="/fragments/header :: header-css"></div>
+    <div th:replace="fragments/header :: header-css"></div>
 
 </head>
 <body>
-<div th:replace="/fragments/header :: headerFragment"></div>
+<div th:replace="fragments/header :: headerFragment"></div>
 
     <form class="form-signin" method="post" th:action="@{/register}" th:object="${registrationUserDto}">
         <label for="firstName">First name</label>

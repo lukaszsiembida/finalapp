@@ -1,10 +1,13 @@
 package pl.sda.finalapp.categories;
 
 
+import com.google.common.io.Resources;
+
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -42,16 +45,12 @@ public class CategoryDao {//Dao- Data Access Object
     }
 
     private List<String> readCategoriesFromFile() {
-        ClassLoader classLoader = this.getClass().getClassLoader();
-        URL resource = classLoader.getResource("categories.txt");
-        List<String> lines;
         try {
-            lines = Files.readAllLines(Paths.get(resource.toURI()));
-        } catch (IOException | URISyntaxException e) {
+            return Resources.readLines(Resources.getResource("categories.txt"), Charset.forName("UTF-8"));
+        } catch (IOException e) {
             e.printStackTrace();
-            lines = Collections.EMPTY_LIST;
+            return Collections.emptyList();
         }
-        return lines;
     }
 
     private void populateParentId(int depth, Map<Integer, List<Category>> categoriesMap) {
