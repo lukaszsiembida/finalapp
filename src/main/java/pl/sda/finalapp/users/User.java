@@ -1,15 +1,15 @@
 package pl.sda.finalapp.users;
 
+import pl.sda.finalapp.BaseEntity;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+public class User extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+
     private String firstName;
     private String lastName;
     private String eMail;

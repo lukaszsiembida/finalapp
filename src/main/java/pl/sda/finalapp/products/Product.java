@@ -1,14 +1,13 @@
 package pl.sda.finalapp.products;
 
+import pl.sda.finalapp.BaseEntity;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class Product {
+public class Product extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
     private String title;
     private String pictureUrl;
     private BigDecimal price;
@@ -29,7 +28,7 @@ public class Product {
     }
 
     public ProductListDto toListDto(String categoryName) {
-        return new ProductListDto(this.id,
+        return new ProductListDto(getId(),
                 this.title,
                 this.pictureUrl,
                 this.price,
@@ -38,7 +37,7 @@ public class Product {
     }
 
     public ProductDto toDto() {
-        return new ProductDto(this.id,
+        return new ProductDto(getId(),
                 this.title,
                 this.pictureUrl,
                 this.price,
