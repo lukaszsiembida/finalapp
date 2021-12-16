@@ -26,6 +26,7 @@ class CategoryDaoTest {
 
     }
 
+
     private Category findCategory(List<Category> categoryList, int categoryId) {
         return categoryList.stream()
                 .filter(c -> c.getId().equals(categoryId))
